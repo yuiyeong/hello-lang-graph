@@ -36,37 +36,37 @@ quote-style = "double"
 
 # 린트 설정
 [lint]
-select = [ # 규칙 활성화
-    "A",   # flake8-builtins
-    "B",   # flake8-bugbear
-    "C4",  # flake8-comprehensions
+select = [# 규칙 활성화
+    "A", # flake8-builtins
+    "B", # flake8-bugbear
+    "C4", # flake8-comprehensions
     "COM", # flake8-commas (COM812 제외)
-    "E",   # pycodestyle 오류
-    "F",   # pyflakes
-    "I",   # isort
+    "E", # pycodestyle 오류
+    "F", # pyflakes
+    "I", # isort
     "ICN", # flake8-import-conventions
     "ISC", # flake8-implicit-str-concat
-    "N",   # pep8-naming
-    "PD",  # pandas-vet
+    "N", # pep8-naming
+    "PD", # pandas-vet
     "PGH", # pygrep-hooks
     "PIE", # flake8-pie
-    "PL",  # pylint
-    "PT",  # flake8-pytest-style
+    "PL", # pylint
+    "PT", # flake8-pytest-style
     "PTH", # flake8-use-pathlib
     "RET", # flake8-return
     "RSE", # flake8-raise
     "RUF", # Ruff-specific rules
     "SIM", # flake8-simplify
     "TID", # flake8-tidy-imports
-    "UP",  # pyupgrade
-    "W",   # pycodestyle 경고
+    "UP", # pyupgrade
+    "W", # pycodestyle 경고
 ]
 
 # 일부 규칙 무시
 ignore = [
-    "E203",   # Black/Ruff Formatter 호환(콜론 전 공백 규칙)
-    "E266",   # 여러 개의 '#' 허용
-    "E501",   # line length 는 formatter 에서 관리
+    "E203", # Black/Ruff Formatter 호환(콜론 전 공백 규칙)
+    "E266", # 여러 개의 '#' 허용
+    "E501", # line length 는 formatter 에서 관리
     "COM812", # formatter 와 충돌 가능성 있는 규칙 무시
 ]
 
@@ -81,15 +81,7 @@ pandas = "pd"
 "matplotlib.pyplot" = "plt"
 seaborn = "sns"
 
-[lint.flake8-import-conventions.banned-from]
-# Python 3.12+: 구형 typing 제네릭 금지
-typing = ["List", "Dict", "Tuple", "Set", "FrozenSet", "Deque"]
-# pandas 심벌은 직접 임포트 금지(항상 pd. 접두사 사용)
-pandas = ["DataFrame", "Series"]
-# os.path 사용 억제(PTH 규칙과 함께 Path 권장)
-"os.path" = ["join", "exists", "isfile", "isdir", "abspath"]
-
-# isor 설정
+# isort 설정
 [lint.isort]
 # src 레이아웃을 사용하므로 known-first-party/third-party 수동 목록 없이도 분류가 동작
 force-single-line = false
@@ -101,17 +93,17 @@ section-order = ["future", "standard-library", "third-party", "first-party", "lo
 # Jupyter Notebook 관련 특별 설정
 [lint.per-file-ignores]
 "*.ipynb" = [
-    "E402",   # 모듈 레벨 임포트가 코드 맨 위에 없어도 됨 (노트북 특성상)
-    "F841",   # 할당 후 사용되지 않는 변수 무시
+    "E402", # 모듈 레벨 임포트가 코드 맨 위에 없어도 됨 (노트북 특성상)
+    "F841", # 할당 후 사용되지 않는 변수 무시
     "PTH123", # open() 대신 Path.open() 사용 무시
     "RUF003", # 애매한 유니코드 문자(ambiguous unicode) 경고 무시
-    "PD901",  # DataFrame 변수명 관련 경고 무시
-    "N806",   # 대문자 변수명 무시
-    "N813",   # 카멜케이스 변수명 무시
-    "PLR2004",# 매직 넘버 사용 무시
+    "PD901", # DataFrame 변수명 관련 경고 무시
+    "N806", # 대문자 변수명 무시
+    "N813", # 카멜케이스 변수명 무시
+    "PLR2004", # 매직 넘버 사용 무시
     "RUF001", # ambiguous 문자 포함 무시
-    "PD003",  # .fillna() 사용 무시
-    "PD002",  # `inplace=True` 사용 무시
-    "PD004",  # .dropna() 사용 무시
+    "PD003", # .fillna() 사용 무시
+    "PD002", # `inplace=True` 사용 무시
+    "PD004", # .dropna() 사용 무시
     "PD010",
 ]

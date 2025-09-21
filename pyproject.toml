@@ -13,6 +13,9 @@ dependencies = [
     "langgraph>=0.6.7",
     "langchain-docling>=1.1.0",
     "docling>=2.53.0",
+    "unstructured[md]>=0.18.15",
+    "nltk>=3.9.1",
+    "langchain-chroma>=0.2.6",
 ]
 
 [project.optional-dependencies]
